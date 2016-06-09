@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ -z "$*" ]; then 
+	echo "No args, Syntax: newfile <file name>"; 
+else
+	FILE=$1
+	
+	if [ ! -f $FILE ]; then
+		echo "Creating new shell:" $1
+		cat >~/$1 <<EOF
+#!/bin/sh
+
+EOF
+		chmod 777 $1
+	else
+		echo $1 "aleady exists"
+	fi
+fi
+
+
