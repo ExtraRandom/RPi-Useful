@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ -z "$*" ]; then 
+	echo "No args, Syntax: web <arg1> <arg2>"; 
+else	
+	if [ "$1" = "ip" ]; then
+		hostname -I
+	elif [ "$1" = "status" ]; then
+		if [ "$2" = "flask" ]; then
+			echo "enter flask stuff here"
+		elif [ "$2" = "noip" ]; then
+			sudo /usr/local/bin/noip2 -S
+		else
+			echo "Incorrect or No 2nd arg for ./web status - Correct args: status, flask"
+		fi
+
+	else
+		echo "Inccorrect Arg - Correct Args: ip, status"
+	fi
+fi
+

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z "$*" ]; then 
+	echo "No args, Syntax: sys <arg1>"; 
+else
+	if [ "$1" = "h" ]; then
+		sudo halt
+	elif [ "$1" = "r" ]; then
+		sudo reboot
+	else
+		echo "Inccorrect Arg - Correct Args: h, r"
+	fi
+fi
+
