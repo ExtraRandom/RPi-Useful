@@ -8,7 +8,7 @@ Argument: name for new file
 
 Creates a new shell script file named whatever was input and chmod 777's said file. 
 
-May change it to use 777 by default but accept a second argument to set a different permission level.  
+May change it to use 777 by default and accept a second argument to set a different permission level.  
 
 ### sys
 Possible Arguments: r, h
