@@ -11,7 +11,12 @@ else
 #!/bin/sh
 
 EOF
-		chmod 777 $1
+	
+		if [ -z "$2" ]; then
+			echo "k"
+		else
+			chmod 777 $1
+		fi
 	else
 		echo $1 "aleady exists"
 	fi
