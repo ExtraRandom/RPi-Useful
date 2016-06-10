@@ -16,7 +16,7 @@ Possible Arguments: r, h
 Reboots or Halts based on input
 
 ### web
-Possible Arguments: ip, status
-Arugments for status: flask, noip
+Possible Arguments: ip, flask, noip
+Arugments for flask: start, stop, restart, status
 
-For easy finding of web-related info.
+For easy finding of web-related info as well as controlling the flask service.
