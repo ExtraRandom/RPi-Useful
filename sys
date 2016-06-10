@@ -8,7 +8,6 @@ else
 	elif [ "$1" = "r" ]; then
 		sudo reboot
 	else
-		echo "Inccorrect Arg - Correct Args: h, r"
+		echo "Incorrect Arg - Correct Args: h, r"
 	fi
 fi
-

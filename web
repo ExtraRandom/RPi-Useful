@@ -5,16 +5,22 @@ if [ -z "$*" ]; then
 else	
 	if [ "$1" = "ip" ]; then
 		hostname -I
-	elif [ "$1" = "status" ]; then
-		if [ "$2" = "flask" ]; then
+	elif [ "$1" = "flask" ]; then
+		if [ "$2" = "start" ]; then
+			sudo systemctl start flask.service
+		elif [ "$2" = "stop" ]; then
+			sudo systemctl stop flask.service
+		elif [ "$2" = "restart" ]; then
+			sudo systemctl restart flask.service
+		elif [ "$2" = "status" ]; then
 			sudo systemctl status flask.service
-		elif [ "$2" = "noip" ]; then
-			sudo /usr/local/bin/noip2 -S
 		else
-			echo "Incorrect or No 2nd arg for ./web status - Correct args: status, flask"
+			echo "Incorrect Arg - Correct Args: start, stop, restart, status"
 		fi
+	elif [ "$1" = "noip" ]; then
+		sudo /usr/local/bin/noip2 -S
 	else
-		echo "Inccorrect Arg - Correct Args: ip, status"
+		echo "Incorrect Arg - Correct Args: ip, flask, noip"
 	fi
 fi
 
